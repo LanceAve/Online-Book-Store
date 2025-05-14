@@ -10,6 +10,51 @@
 
 <!-- header fragment -->
 <div th:insert="~{fragments/HeaderAndFooter :: Header}"></div>
+
+<main>
+    <h2>Shopping Books page</h2>
+
+    <!-- table for available books -->
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Action</th> <!-- "add to cart" button -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.bookISBN}"></td>
+            <td th:text="${book.bookTitle}"></td>
+            <td th:text="${book.bookAuthor}"></td>
+            <td th:text="'$' + ${book.bookPrice}"></td>
+            <td>
+                <button th:attr="data-isbn=${book.bookISBN}" class="add-to-cart">Add to Cart</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- shopping cart summary -->
+    <h3>Shopping Cart</h3>
+    <table class="cart-summary">
+        <thead>
+        <tr>
+            <th>Number of Items in Cart</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="cart-count" th:text="${cartSize}">0</td>
+        </tr>
+        </tbody>
+    </table>
+
+</main>
+
 <!-- footer fragment -->
 <div th:replace="~{fragments/HeaderAndFooter :: Footer}"></div>
 

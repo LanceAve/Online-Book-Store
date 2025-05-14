@@ -33,3 +33,11 @@ public class BookController {
         return "shopping_books";
     }
 
+    // Add a new book to the list
+    @PostMapping("/add")
+    public String addBook(@ModelAttribute("newBook") Book newBook) {
+        newBook.setBookISBN(generateRandomISBN());
+        bookService.addNewBook(newBook);
+        return "redirect:/books"; // prevent form re-submission
+    }
+

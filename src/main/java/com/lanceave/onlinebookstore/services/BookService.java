@@ -19,6 +19,11 @@ public class BookService {
         return bookList.getBooks();
     }
 
+    public void addNewBook(Book book) {
+
+        // --TODO Insert logging, validation, or constraints
+        bookList.addBook(book);
+    }
 
     public Book findByIsbn(String isbn) {
         return bookList.getBooks().stream()

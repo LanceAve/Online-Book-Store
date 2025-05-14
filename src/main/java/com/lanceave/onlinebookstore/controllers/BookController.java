@@ -41,3 +41,7 @@ public class BookController {
         return "redirect:/books"; // prevent form re-submission
     }
 
+    private String generateRandomISBN() {
+        return String.valueOf(100000 + new Random().nextInt(900000));
+    }
+}

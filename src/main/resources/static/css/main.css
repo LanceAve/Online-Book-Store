@@ -32,3 +32,20 @@ h1, h2 {
     padding-bottom: 0.25rem;
 }
 
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+

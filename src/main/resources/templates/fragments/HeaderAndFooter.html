@@ -1,0 +1,22 @@
+<!-- /templates/fragments/HeaderAndFooter.html -->
+
+<!-- Header Fragment -->
+<div th:fragment="Header">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <header class="navbar">
+        <ul class="nav-links">
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/books}">Available Books</a></li>
+            <li><a th:href="@{/books/shopping}">Shopping Books</a></li>
+            <li><a th:href="@{/checkout}">Check Out</a></li>
+        </ul>
+    </header>
+</div>
+
+<!-- Footer Fragment -->
+<div th:fragment="Footer">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <footer>
+        <span style="font-size:10pt;">&copy; LanceAve</span>
+    </footer>
+</div>

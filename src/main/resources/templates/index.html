@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bookstore Home</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<!-- Include Header Fragment -->
+<div th:insert="~{fragments/HeaderAndFooter :: Header}"></div>
+
+<main class="container">
+    <h2>Welcome to Lance's Online Bookstore!</h2>
+    <img src="/images/bookstore.png" alt="Bookstore Image" class="rounded-image">
+</main>
+
+<!-- Include Footer Fragment -->
+<div th:replace="~{fragments/HeaderAndFooter :: Footer}"></div>
+
+</body>
+</html>

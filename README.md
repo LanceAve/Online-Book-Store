@@ -1,6 +1,6 @@
 # Bookstore Web App
 
-A minimalist bookstore inventory and shopping cart system built with Spring Boot, Thymeleaf, and vanilla JavaScript.
+A minimalist bookstore inventory and shopping cart system built with Spring Boot, Thymeleaf, and Java (with honorary guest: JavaScript).
 
 ## Features
 
@@ -15,7 +15,7 @@ A minimalist bookstore inventory and shopping cart system built with Spring Boot
 - Java 21
 - Spring Boot
 - Thymeleaf
-- HTML/CSS/JavaScript
+- HTML / CSS/ JavaScript
 - Gradle
 
 ## How to Run
@@ -23,12 +23,14 @@ A minimalist bookstore inventory and shopping cart system built with Spring Boot
 ```bash
 ./gradlew bootRun
 ```
+Then open: http://localhost:8080
 
 ## Demo
 
 [![Watch Demo](images/demo-preview.png)](demo/bookstore-demo.mp4)
 
-## Todo
+## To-Do
 
-- Add user authentication
+- Add user authentication (somehow...)
 - Hook up database (SQLite/PostgreSQL)
+- Add book search/filter functionality

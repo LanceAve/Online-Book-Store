@@ -26,3 +26,10 @@ public class BookController {
         return "available_books";
     }
 
+    // Shopping Page
+    @GetMapping("/shopping")
+    public String showShoppingBooks(Model model) {
+        model.addAttribute("books", bookService.getAllBooks());
+        return "shopping_books";
+    }
+

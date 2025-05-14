@@ -34,3 +34,8 @@ Then open: http://localhost:8080
 - Add user authentication (somehow...)
 - Hook up database (SQLite/PostgreSQL)
 - Add book search/filter functionality
+
+## Experimental Frontend (Next.js + TypeScript)
+A seperate 'nextjs-frontend' branch which contains a fully client-rendered version fo the UI via the use of React + Next.js. Currently a work in progress.
+
+Branch: [`nextjs-frontend`](https://github.com/LanceAve/OnlineBookStore/tree/nextjs-frontend)

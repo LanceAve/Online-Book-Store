@@ -19,3 +19,7 @@ public class Book {
         this.bookPrice = bookPrice;
     }
 
+    private String generateBookISBN() {
+        return String.valueOf(100000 + new Random().nextInt(900000)); // Generates a random 6-digit number
+    }
+}

@@ -49,3 +49,18 @@ table {
     font-size: 0.95rem;
 }
 
+thead {
+    background-color: #dfe6e9;
+    color: #2d3436;
+}
+
+th, td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+tbody tr:hover {
+    background-color: #f1f2f6;
+}
+

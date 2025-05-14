@@ -20,3 +20,28 @@ public class CheckoutController {
         this.checkoutService = checkoutService;
     }
 
+    @GetMapping
+    public String showCheckout(Model model, HttpSession session) {
+        BookCartList cart = getOrCreateCart(session);
+
+        double subtotal = checkoutService.getSubtotal(cart);
+        double tax = checkoutService.getTax(cart);
+        double total = checkoutService.getTotal(cart);
+
+        model.addAttribute("cartBooks", cart.getCartBooks());
+        model.addAttribute("subtotal", df.format(subtotal));
+        model.addAttribute("salesTax", df.format(tax));
+        model.addAttribute("total", df.format(total));
+
+        return "checkout";
+    }
+
+    private BookCartList getOrCreateCart(HttpSession session) {
+        BookCartList cart = (BookCartList) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new BookCartList();
+            session.setAttribute("cart", cart);
+        }
+        return cart;
+    }
+}

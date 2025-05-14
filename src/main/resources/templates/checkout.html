@@ -10,6 +10,49 @@
 <!-- header fragment -->
 <div th:insert="~{fragments/HeaderAndFooter :: Header}"></div>
 
+<main class="container">
+    <h2>Check out page!</h2>
+
+    <!-- checkout items -->
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${cartBooks}">
+            <td th:text="${book.bookISBN}"></td>
+            <td th:text="${book.bookTitle}"></td>
+            <td th:text="${book.bookAuthor}"></td>
+            <td th:text="'$' + ${book.bookPrice}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- order summary -->
+    <h3>Order Summary</h3>
+    <table class="cart-summary">
+        <thead>
+        <tr>
+            <th>Subtotal</th>
+            <th>Sales Tax (13%)</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="'$' + ${subtotal}"></td>
+            <td th:text="'$' + ${salesTax}"></td>
+            <td class="total_number" th:text="'$' + ${total}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
 <!-- footer fragment -->
 <div th:replace="~{fragments/HeaderAndFooter :: Footer}"></div>
 

@@ -9,6 +9,36 @@
 <!-- Include Header Fragment -->
 <div th:insert="~{fragments/HeaderAndFooter :: Header}"></div>
 
+<main>
+    <h2>Available Books</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.bookISBN}"></td>
+            <td th:text="${book.bookTitle}"></td>
+            <td th:text="${book.bookAuthor}"></td>
+            <td th:text="${book.bookPrice}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3>Add a Book to the Book List</h3>
+    <form th:action="@{/books/add}" method="post" th:object="${newBook}" class="add-book-form">
+        <input type="text" th:field="*{bookTitle}" placeholder="Title" required>
+        <input type="text" th:field="*{bookAuthor}" placeholder="Author" required>
+        <input type="number" step="0.01" th:field="*{bookPrice}" placeholder="Price" required>
+        <button type="submit" class="green-button">Add Book</button>
+    </form>
+</main>
+
 <!-- Include Footer Fragment -->
 <div th:replace="~{fragments/HeaderAndFooter :: Footer}"></div>
 </body>

@@ -30,3 +30,19 @@ public class CartController {
         return "redirect:/books/shopping";
     }
 
+    @GetMapping("/count")
+    @ResponseBody
+    public int getCartCount(HttpSession session) {
+        BookCartList cart = (BookCartList) session.getAttribute("cart");
+        return (cart != null) ? cart.getCartSize() : 0;
+    }
+
+    private BookCartList getOrCreateCart(HttpSession session) {
+        BookCartList cart = (BookCartList) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new BookCartList();
+            session.setAttribute("cart", cart);
+        }
+        return cart;
+    }
+}

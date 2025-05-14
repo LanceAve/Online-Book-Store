@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Check out</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<!-- header fragment -->
+<div th:insert="~{fragments/HeaderAndFooter :: Header}"></div>
+
+<!-- footer fragment -->
+<div th:replace="~{fragments/HeaderAndFooter :: Footer}"></div>
+
+</body>
+</html>

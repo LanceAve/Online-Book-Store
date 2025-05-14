@@ -20,3 +20,13 @@ public class CartController {
         this.cartService = cartService;
     }
 
+    @PostMapping("/add/{isbn}")
+    public String addToCart(@PathVariable("isbn") String isbn, HttpSession session) {
+        Book book = bookService.findByIsbn(isbn);
+        if (book != null) {
+            BookCartList cart = getOrCreateCart(session);
+            cartService.addBookToCart(cart, book);
+        }
+        return "redirect:/books/shopping";
+    }
+
